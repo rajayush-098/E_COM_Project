@@ -1,0 +1,1363 @@
+# PROJECT: GIFTLY
+## A Modern Multi-Category E-Commerce Platform with Smart Gift Discovery
+
+Act as a senior full-stack software engineer, UI/UX designer, database architect and e-commerce product developer.
+
+I want you to build a complete, functional, professional, responsive, modern e-commerce website called GIFTLY.
+
+This is not a simple frontend demonstration or static website. Build a complete full-stack e-commerce application with a working frontend, backend, database, authentication, product catalogue, shopping cart, checkout, order management and a unique product recommendation feature.
+
+Develop the project with clean architecture, reusable components, secure data handling and maintainable code.
+
+Do not create only a visual prototype. All important buttons, forms, navigation links and shopping functionalities must work.
+
+==================================================
+1. PROJECT IDENTITY
+==================================================
+
+Brand Name: GIFTLY
+
+Main Tagline:
+"Everyday Shopping. Extraordinary Discoveries."
+
+Special Feature:
+"GiftMatch – Find a gift they'll actually love."
+
+Project Type:
+Multi-category e-commerce shopping platform.
+
+Core Business Concept:
+
+GIFTLY must function as a general-purpose online shopping website similar in concept to conventional e-commerce marketplaces.
+
+It must NOT look like a website dedicated exclusively to gifting.
+
+Customers should be able to purchase products for their everyday needs across multiple categories.
+
+However, GIFTLY should have one distinctive feature called GiftMatch.
+
+GiftMatch helps customers discover suitable products when purchasing something for another person.
+
+The website must support two main shopping journeys:
+
+1. Normal Shopping:
+Browse → Search → Product Details → Cart → Checkout → Order.
+
+2. GiftMatch Shopping:
+Recipient → Occasion → Interests → Budget → Recommendations → Product → Cart → Checkout.
+
+IMPORTANT:
+
+GiftMatch is the speciality of GIFTLY, not its entire business.
+
+The regular shopping experience must remain the primary focus of the website.
+
+==================================================
+2. TECHNOLOGY STACK
+==================================================
+
+Use the following technology stack.
+
+FRONTEND:
+
+- React.js
+- TypeScript
+- HTML5
+- Tailwind CSS
+- Custom CSS
+- React Router
+- Lucide React icons
+
+BACKEND:
+
+- Node.js
+- TypeScript
+- Server-side API routes
+- Modular business logic
+- Input validation
+
+DATABASE:
+
+- Firebase Cloud Firestore
+
+AUTHENTICATION:
+
+- Firebase Authentication
+- Google Sign-In
+- Protected customer account routes
+
+HOSTING:
+
+- Google Cloud Run through Google AI Studio deployment.
+
+Do not use Python, Flask, SQLite, PHP or MySQL for this implementation.
+
+Use Firebase Firestore as the primary persistent database.
+
+Use localStorage only for temporary guest cart information and non-sensitive UI preferences, not as a replacement for the database.
+
+Use Google AI Studio's native Firebase integration.
+
+When Firebase setup is required, initiate the Firebase integration and use Cloud Firestore and Firebase Authentication. Do not simulate database functionality with hardcoded JavaScript arrays.
+
+==================================================
+3. BRANDING AND VISUAL IDENTITY
+==================================================
+
+Create a premium, modern, clean and professional e-commerce design.
+
+The website should look like a genuine shopping platform rather than a basic college project.
+
+DESIGN DIRECTION:
+
+- Minimal
+- Premium
+- Elegant
+- Modern
+- User-friendly
+- Spacious
+- Professional
+
+Suggested colour palette:
+
+Primary background: #F8F9F7
+Card background: #FFFFFF
+Primary text: #202A27
+Secondary text: #777F7B
+Primary green: #26734D
+Accent orange: #F28C52
+Border: #E8ECE8
+
+Use a clean modern font such as Inter.
+
+Use:
+
+- Rounded product cards.
+- Subtle shadows.
+- Professional product photography.
+- Clean typography.
+- Proper whitespace.
+- Smooth but subtle hover effects.
+- Consistent button styles.
+- Consistent spacing.
+- Attractive section headings.
+
+Do not use excessive gradients, neon colours, huge animations or unnecessary 3D effects.
+
+The overall appearance should feel like a polished online retail brand.
+
+==================================================
+4. WEBSITE NAVIGATION
+==================================================
+
+Create a responsive navigation system.
+
+Desktop navigation:
+
+GIFTLY
+
+Home
+Shop
+Categories
+Deals
+GiftMatch
+About
+
+Search Bar
+
+Wishlist Icon
+Account Icon
+Shopping Cart Icon
+
+GiftMatch should receive a subtle visual highlight to make it discoverable.
+
+It should not dominate the entire navigation.
+
+The navigation must be responsive.
+
+On mobile devices, use a clean mobile menu with accessible navigation.
+
+==================================================
+5. HOMEPAGE
+==================================================
+
+The homepage is one of the most important pages.
+
+It must clearly communicate that GIFTLY is a general shopping platform.
+
+SECTION 1: HEADER
+
+Create a clean navigation bar with:
+
+- GIFTLY logo.
+- Main navigation links.
+- Product search.
+- Wishlist.
+- User account.
+- Shopping cart.
+
+SECTION 2: HERO BANNER
+
+Main headline:
+
+"Everything You Love, All in One Place."
+
+Subtitle:
+
+"Discover everyday essentials, lifestyle products and something special for everyone."
+
+Buttons:
+
+[Explore Products]
+
+[Discover More]
+
+Use a professional lifestyle or general shopping banner image.
+
+Do not use a gift-box-themed banner as the main homepage hero.
+
+SECTION 3: SHOP BY CATEGORY
+
+Display attractive category cards with images.
+
+Categories:
+
+1. Electronics
+2. Fashion
+3. Beauty & Personal Care
+4. Home & Living
+5. Stationery
+6. Lifestyle
+7. Accessories
+8. Personalized Products
+
+Each category must navigate to its respective product listing.
+
+SECTION 4: TRENDING PRODUCTS
+
+Display approximately 8 trending products.
+
+Each product card must contain:
+
+- Product image.
+- Product name.
+- Price.
+- Original price, if discounted.
+- Discount percentage.
+- Rating.
+- Wishlist button.
+- Add to Cart button.
+- View Details link.
+
+SECTION 5: SPECIAL OFFERS
+
+Create an attractive promotional banner for ongoing deals.
+
+SECTION 6: NEW ARRIVALS
+
+Show recently added products.
+
+SECTION 7: GIFTMATCH PROMOTIONAL SECTION
+
+Create a separate highlighted section.
+
+Heading:
+
+"Shopping for Someone Special?"
+
+Subtitle:
+
+"Finding the perfect present doesn't have to be difficult. Let GiftMatch help you discover products they'll love."
+
+Button:
+
+[Try GiftMatch]
+
+This section must explain GiftMatch without making the entire website look like a gift store.
+
+SECTION 8: BEST SELLERS
+
+Display popular products from multiple categories.
+
+SECTION 9: FOOTER
+
+Include:
+
+- About GIFTLY.
+- Contact information placeholder.
+- Customer support.
+- Shipping information.
+- Return policy.
+- Privacy policy.
+- Terms and conditions.
+- Social media icons.
+- Copyright information.
+
+==================================================
+6. PRODUCT CATEGORIES
+==================================================
+
+Implement a multi-category product catalogue.
+
+Initial categories:
+
+ELECTRONICS:
+- Wireless Earbuds
+- Bluetooth Speakers
+- Smart Watches
+- Mobile Accessories
+- Desk Gadgets
+
+FASHION:
+- Watches
+- Wallets
+- Bags
+- Sunglasses
+- Clothing Accessories
+
+BEAUTY AND PERSONAL CARE:
+- Skincare Products
+- Grooming Kits
+- Personal Care Accessories
+- Beauty Tools
+
+HOME AND LIVING:
+- Table Lamps
+- Decorative Items
+- Organizers
+- Kitchen Accessories
+- Home Decor
+
+STATIONERY:
+- Notebooks
+- Pens
+- Desk Organizers
+- Study Accessories
+
+LIFESTYLE:
+- Water Bottles
+- Travel Accessories
+- Fitness Accessories
+- Daily-use Products
+
+PERSONALIZED PRODUCTS:
+- Customized Mugs
+- Photo Frames
+- Personalized Accessories
+
+Create approximately 36–48 initial sample products across these categories.
+
+Each product should have realistic Indian pricing in INR.
+
+The product catalogue must be stored in Firestore.
+
+Do not create a separate product database for GiftMatch.
+
+==================================================
+7. SHOP PAGE
+==================================================
+
+Create a complete shopping catalogue.
+
+Features:
+
+- Display all active products.
+- Search products by name.
+- Filter by category.
+- Filter by price range.
+- Filter by rating.
+- Filter by availability.
+- Sort by price low to high.
+- Sort by price high to low.
+- Sort by newest.
+- Sort by popularity.
+- Sort by rating.
+
+Use a responsive grid.
+
+Desktop: 4 columns where screen space allows.
+
+Tablet: 2–3 columns.
+
+Mobile: 2 columns where practical, otherwise 1–2 adaptive columns.
+
+Each product card must be reusable across the homepage, category pages, search results and GiftMatch results.
+
+Show loading skeletons during data fetching.
+
+Provide useful empty states when no products match the selected filters.
+
+==================================================
+8. PRODUCT DETAILS PAGE
+==================================================
+
+When a customer selects a product, open its detailed product page.
+
+Display:
+
+- Large product image.
+- Additional product images if available.
+- Product name.
+- Product price.
+- Original price.
+- Discount.
+- Customer rating.
+- Product description.
+- Product category.
+- Availability.
+- Stock status.
+- Quantity selector.
+- Add to Cart.
+- Buy Now.
+- Add to Wishlist.
+
+Also show:
+
+- Product specifications.
+- Related products.
+- Similar products.
+- Customer reviews, if available.
+
+For giftable products, optionally display a small:
+
+"Recommended for Gifting"
+
+label.
+
+The website must not label every product as a gift.
+
+==================================================
+9. UNIQUE FEATURE: GIFTMATCH
+==================================================
+
+GiftMatch is the main speciality of GIFTLY.
+
+Build it as a guided multi-step questionnaire.
+
+It must use the same product catalogue as the regular shopping system.
+
+Do not create separate gift products.
+
+STEP 1: RECIPIENT
+
+Ask:
+
+"Who are you shopping for?"
+
+Options:
+
+- Friend
+- Boyfriend
+- Girlfriend
+- Brother
+- Sister
+- Father
+- Mother
+- Teacher
+- Colleague
+- Others
+
+STEP 2: OCCASION
+
+Ask:
+
+"What's the occasion?"
+
+Options:
+
+- Birthday
+- Anniversary
+- Graduation
+- Wedding
+- Festival
+- Thank You
+- Celebration
+- Just Because
+
+STEP 3: INTERESTS
+
+Ask:
+
+"What does this person like?"
+
+Options:
+
+- Technology
+- Fashion
+- Gaming
+- Music
+- Books
+- Fitness
+- Travelling
+- Art
+- Photography
+- Home Decor
+- Personal Care
+- Sports
+
+Allow multiple selections.
+
+STEP 4: BUDGET
+
+Options:
+
+- Under ₹500
+- ₹500–₹1,000
+- ₹1,000–₹2,000
+- ₹2,000–₹5,000
+- Above ₹5,000
+
+STEP 5: GIFT TYPE
+
+Options:
+
+- Useful
+- Stylish
+- Personalized
+- Premium
+- Creative
+- Surprise Me
+
+STEP 6:
+
+Button:
+
+[Find My Match]
+
+Provide:
+
+- Back button.
+- Next button.
+- Progress indicator.
+- Selected option highlighting.
+- Form validation.
+- Responsive layout.
+
+Do not force the user to answer optional questions.
+
+==================================================
+10. GIFTMATCH RECOMMENDATION ENGINE
+==================================================
+
+IMPORTANT:
+
+Do not use AI, Gemini API, machine learning or external recommendation APIs.
+
+Implement a transparent rule-based recommendation system using TypeScript.
+
+Each product must contain metadata:
+
+- Suitable recipients.
+- Suitable occasions.
+- Interests.
+- Gift styles.
+- Price.
+- IsGiftable status.
+
+SCORING SYSTEM:
+
+Recipient match: 30 points.
+
+Occasion match: 30 points.
+
+Interest match: 20 points.
+
+Budget match: 20 points.
+
+Total maximum: 100 points.
+
+Only score criteria the customer actually selected.
+
+Normalize scores when optional criteria are skipped.
+
+Budget matching:
+
+- Within selected budget: 20 points.
+- Up to 10% above the maximum budget: partial score of 10.
+- Beyond that: 0 points.
+
+Only recommend products where:
+
+IsGiftable = true.
+
+Sort recommendations by:
+
+1. Highest GiftMatch score.
+2. Highest product rating.
+3. Popularity.
+
+Return the final score and clear explanations.
+
+Example:
+
+Customer selections:
+
+Recipient: Friend.
+Occasion: Birthday.
+Interest: Technology.
+Budget: ₹500–₹1,000.
+Gift Type: Useful.
+
+Possible results:
+
+Wireless Earbuds: ₹899.
+Bluetooth Speaker: ₹799.
+Smart LED Lamp: ₹699.
+Mobile Stand: ₹499.
+
+Each recommendation must contain:
+
+Product Image.
+Product Name.
+Price.
+Rating.
+Match Score.
+Why This Match?
+
+Example:
+
+95/100 MATCH
+
+Why this match?
+
+- Suitable for friends.
+- Appropriate for birthdays.
+- Matches technology interests.
+- Fits your selected budget.
+
+Buttons:
+
+[View Product]
+[Add to Cart]
+
+The score must be calculated from actual product metadata.
+
+Do not randomly generate match scores.
+
+If no products match, provide a helpful message and allow customers to modify their preferences.
+
+==================================================
+11. SHOPPING CART
+==================================================
+
+Create a functional shopping cart.
+
+Features:
+
+- Add products.
+- Remove products.
+- Increase quantity.
+- Decrease quantity.
+- Display product images.
+- Display product names.
+- Display individual prices.
+- Display quantity.
+- Calculate subtotal.
+- Calculate discounts.
+- Calculate total.
+
+Prevent purchasing quantities exceeding available inventory.
+
+Persist authenticated users' carts in Firestore.
+
+For guest customers, preserve cart information locally until login.
+
+Do not lose cart data during navigation or refresh.
+
+==================================================
+12. CHECKOUT SYSTEM
+==================================================
+
+Create a clean checkout experience.
+
+Required fields:
+
+Customer Name.
+Mobile Number.
+Email.
+Address.
+City.
+State.
+PIN Code.
+
+Display an order summary.
+
+Payment options:
+
+1. Cash on Delivery.
+2. Online Payment (Demo Mode).
+
+Do not integrate a real payment gateway in the first version.
+
+Do not collect or store real card numbers, CVV or banking credentials.
+
+Before placing an order:
+
+- Validate customer details.
+- Validate stock availability.
+- Recalculate the order amount on the server.
+- Apply available discounts.
+- Prevent duplicate submissions.
+
+Create the order using a secure server-side operation.
+
+Generate a unique order ID.
+
+==================================================
+13. ORDER CONFIRMATION
+==================================================
+
+After successful checkout, show:
+
+"Your Order Has Been Placed Successfully!"
+
+Display:
+
+- Order ID.
+- Ordered products.
+- Total amount.
+- Payment method.
+- Delivery address.
+- Order date.
+- Initial order status.
+
+Order status:
+
+- Pending
+- Confirmed
+- Processing
+- Shipped
+- Delivered
+- Cancelled
+
+Allow customers to visit their order history from their account page.
+
+==================================================
+14. USER AUTHENTICATION
+==================================================
+
+Implement Firebase Authentication.
+
+Support:
+
+- Google Sign-In.
+- Logout.
+- Protected account pages.
+- User profile.
+- Order history.
+- Wishlist.
+- Saved delivery addresses.
+
+Customers should be able to browse products without logging in.
+
+Allow guest browsing and guest cart functionality.
+
+Require authentication when accessing protected customer account functions and placing an order, unless a secure guest-order workflow is implemented.
+
+Never store passwords directly in Firestore.
+
+==================================================
+15. WISHLIST
+==================================================
+
+Create a working wishlist.
+
+Users should be able to:
+
+- Add products.
+- Remove products.
+- View saved products.
+- Move products to cart.
+
+Persist authenticated users' wishlists in Firestore.
+
+==================================================
+16. ADMIN DASHBOARD
+==================================================
+
+Create a protected Admin Dashboard.
+
+Admin functions:
+
+PRODUCT MANAGEMENT:
+
+- Add product.
+- Edit product.
+- Delete product.
+- Update price.
+- Update discount.
+- Update inventory.
+- Change product category.
+- Activate/deactivate products.
+- Mark product as featured.
+- Mark product as giftable.
+
+CATEGORY MANAGEMENT:
+
+- Add category.
+- Edit category.
+- Remove category.
+
+ORDER MANAGEMENT:
+
+- View orders.
+- View customer details.
+- View purchased products.
+- Update order status.
+
+DASHBOARD OVERVIEW:
+
+- Total products.
+- Total orders.
+- Total customers.
+- Total sales.
+- Recent orders.
+
+ADMIN SECURITY:
+
+Never allow an ordinary customer to access the admin dashboard.
+
+Never allow users to make themselves administrators by editing their own profile.
+
+Use a protected admin role verified through a trusted backend process.
+
+Create an admins collection or equivalent secure administrator role system.
+
+Provide an ADMIN_SETUP.md file explaining how to assign the first administrator securely through Firebase.
+
+==================================================
+17. PRODUCT IMAGE MANAGEMENT
+==================================================
+
+I do not want to manually edit frontend code whenever I add products.
+
+Implement a reusable product image system.
+
+For the initial catalogue:
+
+- Populate product image URLs automatically.
+- Use suitable, stable, royalty-free product images.
+- Use category-appropriate photography.
+- Do not use random unrelated images.
+- Avoid broken image links.
+
+For future products:
+
+Allow administrators to enter an image URL through the Admin Dashboard.
+
+Keep the product image URL in Firestore.
+
+Display product images automatically wherever products appear.
+
+Use lazy loading.
+
+Implement a fallback image when a product image fails to load.
+
+Never store large base64 image strings directly inside Firestore documents.
+
+Do not require Firebase Storage for the initial version. Keep image storage modular so Firebase Storage can be added later if necessary.
+
+==================================================
+18. FIRESTORE DATABASE ARCHITECTURE
+==================================================
+
+Use Cloud Firestore.
+
+Create the following collections.
+
+COLLECTION 1: products
+
+Fields:
+
+- name
+- slug
+- description
+- shortDescription
+- categoryId
+- price
+- originalPrice
+- discountPercentage
+- imageUrl
+- gallery
+- sku
+- stockQuantity
+- ratingAverage
+- ratingCount
+- isActive
+- isFeatured
+- isGiftable
+- recipients
+- occasions
+- interests
+- giftStyles
+- createdAt
+- updatedAt
+
+COLLECTION 2: categories
+
+Fields:
+
+- name
+- slug
+- description
+- imageUrl
+- isActive
+- displayOrder
+
+COLLECTION 3: users
+
+Document ID: Firebase Authentication UID.
+
+Fields:
+
+- displayName
+- email
+- photoURL
+- phone
+- createdAt
+- updatedAt
+
+Use subcollections where appropriate for saved addresses.
+
+Do not let customers modify protected roles or administrative permissions.
+
+COLLECTION 4: carts
+
+Organize customer cart information by user UID.
+
+Store:
+
+- productId
+- quantity
+- updatedAt
+
+COLLECTION 5: wishlists
+
+Organize saved products by user UID.
+
+COLLECTION 6: orders
+
+Fields:
+
+- orderId
+- userId
+- customerDetails
+- deliveryAddress
+- items
+- subtotal
+- discount
+- deliveryCharge
+- total
+- paymentMethod
+- paymentStatus
+- orderStatus
+- createdAt
+
+For order items, save product name, product image, unit price and quantity as a purchase-time snapshot.
+
+COLLECTION 7: reviews
+
+Fields:
+
+- productId
+- userId
+- userName
+- rating
+- reviewText
+- createdAt
+
+COLLECTION 8: admins
+
+Fields:
+
+- uid
+- role
+- createdAt
+
+Admin permissions must be assigned through a trusted administrative process.
+
+Design database indexes for commonly used product filters and queries.
+
+Use Firestore transactions when necessary for stock and order consistency.
+
+==================================================
+19. BACKEND ARCHITECTURE
+==================================================
+
+Use a modular server-side Node.js architecture.
+
+Organize responsibilities into:
+
+1. Authentication service.
+2. Product service.
+3. Category service.
+4. Cart service.
+5. Wishlist service.
+6. GiftMatch recommendation service.
+7. Order service.
+8. Admin service.
+
+Create server-side endpoints or equivalent server handlers for important operations.
+
+Suggested API structure:
+
+GET /api/products
+
+GET /api/products/:id
+
+GET /api/categories
+
+GET /api/products/search
+
+POST /api/giftmatch/recommendations
+
+POST /api/orders
+
+GET /api/orders
+
+GET /api/orders/:id
+
+POST /api/admin/products
+
+PUT /api/admin/products/:id
+
+DELETE /api/admin/products/:id
+
+PUT /api/admin/orders/:id/status
+
+Use the server routes for sensitive business operations.
+
+For order creation:
+
+- Verify the authenticated user.
+- Fetch actual product prices from Firestore.
+- Check stock.
+- Recalculate totals.
+- Create the order.
+- Update inventory atomically using a Firestore transaction.
+- Prevent duplicate order submissions.
+
+Never trust prices or stock quantities supplied by the browser.
+
+Use proper error handling and HTTP status codes.
+
+==================================================
+20. FIREBASE SECURITY
+==================================================
+
+Implement secure Firestore Security Rules.
+
+Requirements:
+
+1. Public visitors can read active products and categories.
+2. Only administrators can create, edit or remove products.
+3. Customers can access their own profiles.
+4. Customers can access their own carts.
+5. Customers can access their own wishlists.
+6. Customers can read only their own orders.
+7. Customers cannot modify order totals or payment statuses.
+8. Customers cannot change their administrator permissions.
+9. Administrative operations must be authorized on the backend.
+10. Never expose service account credentials or private API keys in frontend code.
+
+Do not use permissive rules such as:
+
+allow read, write: if true;
+
+Use default-deny security rules.
+
+Generate the security rules and explain which parts require administrative privileges.
+
+Before deployment, test all security-sensitive operations.
+
+==================================================
+21. SEARCH AND DISCOVERY
+==================================================
+
+Implement a useful search system.
+
+Customers should be able to search by:
+
+- Product name.
+- Category.
+- Product keywords.
+- Relevant tags.
+
+Include suggestions or recent search terms if practical.
+
+Provide filtering and sorting without unnecessary page reloads.
+
+==================================================
+22. RESPONSIVE DESIGN
+==================================================
+
+The entire website must work properly on:
+
+- Desktop.
+- Laptop.
+- Tablet.
+- Android phones.
+- iPhones.
+
+Prioritize mobile usability.
+
+Requirements:
+
+- Responsive navigation.
+- Adaptive product grids.
+- Touch-friendly buttons.
+- Readable text.
+- Proper image scaling.
+- No horizontal overflow.
+- Responsive checkout forms.
+- Responsive GiftMatch questionnaire.
+
+==================================================
+23. PERFORMANCE AND CODE QUALITY
+==================================================
+
+Requirements:
+
+- Reusable React components.
+- TypeScript types and interfaces.
+- Modular code.
+- Reusable product cards.
+- Efficient Firestore queries.
+- Loading states.
+- Error states.
+- Empty states.
+- Lazy-loaded images.
+- Form validation.
+- Consistent code formatting.
+- Proper error boundaries.
+
+Avoid unnecessary dependencies.
+
+Do not place the whole application in one giant component.
+
+Do not hardcode products directly inside individual pages.
+
+Use Firestore as the source of product data.
+
+==================================================
+24. SUGGESTED PROJECT STRUCTURE
+==================================================
+
+Organize the codebase approximately as follows.
+
+src/
+
+  components/
+
+    layout/
+      Navbar.tsx
+      Footer.tsx
+      MobileMenu.tsx
+
+    products/
+      ProductCard.tsx
+      ProductGrid.tsx
+      ProductFilters.tsx
+      ProductSearch.tsx
+
+    cart/
+      CartItem.tsx
+      CartSummary.tsx
+
+    giftmatch/
+      GiftMatchWizard.tsx
+      GiftMatchStep.tsx
+      GiftMatchResults.tsx
+      MatchScore.tsx
+
+    common/
+      Button.tsx
+      Modal.tsx
+      Loader.tsx
+      EmptyState.tsx
+
+  pages/
+
+    Home.tsx
+    Shop.tsx
+    Category.tsx
+    ProductDetails.tsx
+    SearchResults.tsx
+    Deals.tsx
+    GiftMatch.tsx
+    GiftMatchResults.tsx
+    Cart.tsx
+    Checkout.tsx
+    OrderConfirmation.tsx
+    Wishlist.tsx
+    Login.tsx
+    Account.tsx
+    OrderHistory.tsx
+    About.tsx
+
+    admin/
+      AdminDashboard.tsx
+      ManageProducts.tsx
+      ManageOrders.tsx
+      ManageCategories.tsx
+
+  hooks/
+
+    useAuth.ts
+    useCart.ts
+    useProducts.ts
+    useWishlist.ts
+
+  services/
+
+    productService.ts
+    cartService.ts
+    orderService.ts
+    giftMatchService.ts
+    wishlistService.ts
+
+  lib/
+
+    firebase.ts
+    firestore.ts
+
+  types/
+
+    product.ts
+    order.ts
+    user.ts
+    giftmatch.ts
+
+  utils/
+
+    formatCurrency.ts
+    validation.ts
+
+  App.tsx
+  main.tsx
+
+Also maintain a clean server-side directory for Node.js routes and services, following Google AI Studio's generated full-stack project conventions.
+
+Do not force this exact folder structure if the existing AI Studio scaffold requires a different entry point or server convention. Preserve the same separation of responsibilities.
+
+==================================================
+25. SAMPLE DATA AND DATABASE INITIALIZATION
+==================================================
+
+Seed Firestore with approximately 36–48 sample products.
+
+Distribute products across all categories.
+
+Each sample product must have:
+
+- Unique name.
+- Realistic Indian price.
+- Description.
+- Category.
+- Stock quantity.
+- Working image URL.
+- Appropriate tags.
+- Giftable status.
+
+Use Indian Rupee formatting throughout the application.
+
+Example:
+
+₹899
+₹1,499
+₹2,499
+
+Create an idempotent database initialization mechanism.
+
+Running initialization more than once must not create duplicate products or categories.
+
+Do not overwrite existing administrator or customer data.
+
+==================================================
+26. TESTING REQUIREMENTS
+==================================================
+
+Before considering the project complete, verify:
+
+1. Homepage loads correctly.
+2. Navigation works.
+3. Products load from Firestore.
+4. Category navigation works.
+5. Product search works.
+6. Filters work.
+7. Sorting works.
+8. Product details load.
+9. Add to Cart works.
+10. Cart quantity changes work.
+11. Wishlist works.
+12. Firebase login works.
+13. GiftMatch questionnaire works.
+14. GiftMatch scores are correctly calculated.
+15. GiftMatch explanations are correct.
+16. Checkout validation works.
+17. Orders are saved in Firestore.
+18. Inventory is updated correctly.
+19. Order history works.
+20. Admin access is protected.
+21. Product administration works.
+22. Product images have fallbacks.
+23. Mobile layout works.
+24. Firestore security rules prevent unauthorized access.
+
+Fix errors before declaring the project complete.
+
+Do not claim a feature works unless it has actually been implemented and tested.
+
+==================================================
+27. DEVELOPMENT PRIORITY
+==================================================
+
+Develop in this order.
+
+PHASE 1:
+Project setup, React application, design system and navigation.
+
+PHASE 2:
+Firebase setup, Firestore connection and database models.
+
+PHASE 3:
+Homepage, categories and product catalogue.
+
+PHASE 4:
+Product details, search, filters and sorting.
+
+PHASE 5:
+Authentication, cart and wishlist.
+
+PHASE 6:
+Checkout, order placement and order history.
+
+PHASE 7:
+GiftMatch questionnaire and recommendation engine.
+
+PHASE 8:
+Admin dashboard and product management.
+
+PHASE 9:
+Security rules, responsive design and testing.
+
+Do not sacrifice the normal e-commerce experience to prioritize GiftMatch.
+
+==================================================
+28. IMPORTANT DEVELOPMENT INSTRUCTIONS
+==================================================
+
+1. Build an actual functional full-stack application.
+2. Do not create a static HTML mockup.
+3. Do not use fake shopping buttons.
+4. Do not use hardcoded product arrays as the permanent database.
+5. Connect all product pages to Firestore.
+6. Use Firebase Authentication properly.
+7. Implement secure backend order processing.
+8. Keep GiftMatch connected to the main product catalogue.
+9. Maintain reusable components.
+10. Ensure the website is responsive.
+11. Do not expose private credentials.
+12. Do not introduce unnecessary AI or machine learning.
+13. Use proper loading, success and error states.
+14. Preserve existing working code when making changes.

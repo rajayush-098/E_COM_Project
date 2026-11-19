@@ -1,0 +1,235 @@
+{
+  "entities": {
+    "Category": {
+      "title": "Category",
+      "description": "Product category in the GIFTLY catalogue.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "minLength": 2, "maxLength": 80 },
+        "slug": { "type": "string", "minLength": 2, "maxLength": 80, "pattern": "^[a-z0-9-]+$" },
+        "description": { "type": "string", "maxLength": 500 },
+        "imageUrl": { "type": "string", "maxLength": 500 },
+        "isActive": { "type": "boolean" },
+        "displayOrder": { "type": "number" }
+      },
+      "required": ["name", "slug", "description", "imageUrl", "isActive", "displayOrder"]
+    },
+    "Product": {
+      "title": "Product",
+      "description": "Retail product stored in Firestore and shared by everyday shopping and GiftMatch.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "minLength": 2, "maxLength": 140 },
+        "slug": { "type": "string", "minLength": 2, "maxLength": 140, "pattern": "^[a-z0-9-]+$" },
+        "description": { "type": "string", "maxLength": 2500 },
+        "shortDescription": { "type": "string", "maxLength": 300 },
+        "categoryId": { "type": "string", "minLength": 2, "maxLength": 80, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "price": { "type": "number" },
+        "originalPrice": { "type": "number" },
+        "discountPercentage": { "type": "number" },
+        "imageUrl": { "type": "string", "maxLength": 500 },
+        "gallery": { "type": "array" },
+        "sku": { "type": "string", "minLength": 3, "maxLength": 40, "pattern": "^[A-Z0-9\\-]+$" },
+        "stockQuantity": { "type": "number" },
+        "ratingAverage": { "type": "number" },
+        "ratingCount": { "type": "number" },
+        "popularityScore": { "type": "number" },
+        "isActive": { "type": "boolean" },
+        "isFeatured": { "type": "boolean" },
+        "isNewArrival": { "type": "boolean" },
+        "isBestSeller": { "type": "boolean" },
+        "isGiftable": { "type": "boolean" },
+        "recipients": { "type": "array" },
+        "occasions": { "type": "array" },
+        "interests": { "type": "array" },
+        "giftStyles": { "type": "array" },
+        "tags": { "type": "array" },
+        "specs": { "type": "object" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": [
+        "name",
+        "slug",
+        "description",
+        "shortDescription",
+        "categoryId",
+        "price",
+        "originalPrice",
+        "discountPercentage",
+        "imageUrl",
+        "gallery",
+        "sku",
+        "stockQuantity",
+        "ratingAverage",
+        "ratingCount",
+        "isActive",
+        "isFeatured",
+        "isGiftable",
+        "recipients",
+        "occasions",
+        "interests",
+        "giftStyles",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Authenticated customer profile document (no self-editable role fields).",
+      "type": "object",
+      "properties": {
+        "displayName": { "type": "string", "maxLength": 100 },
+        "email": { "type": "string", "maxLength": 160 },
+        "photoURL": { "type": "string", "maxLength": 500 },
+        "phone": { "type": "string", "maxLength": 20 },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["displayName", "email", "createdAt", "updatedAt"]
+    },
+    "UserAddress": {
+      "title": "UserAddress",
+      "description": "Saved Indian delivery address for a customer.",
+      "type": "object",
+      "properties": {
+        "label": { "type": "string", "maxLength": 40 },
+        "fullName": { "type": "string", "minLength": 2, "maxLength": 100 },
+        "phone": { "type": "string", "minLength": 10, "maxLength": 15 },
+        "addressLine": { "type": "string", "minLength": 5, "maxLength": 250 },
+        "city": { "type": "string", "minLength": 2, "maxLength": 80 },
+        "state": { "type": "string", "minLength": 2, "maxLength": 80 },
+        "pinCode": { "type": "string", "pattern": "^[1-9][0-9]{5}$", "minLength": 6, "maxLength": 6 },
+        "isDefault": { "type": "boolean" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["label", "fullName", "phone", "addressLine", "city", "state", "pinCode", "isDefault", "createdAt", "updatedAt"]
+    },
+    "Cart": {
+      "title": "Cart",
+      "description": "Authenticated customer shopping cart persisted by user UID.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "items": { "type": "array" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "items", "updatedAt"]
+    },
+    "Wishlist": {
+      "title": "Wishlist",
+      "description": "Authenticated customer saved product IDs persisted by user UID.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "productIds": { "type": "array" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "productIds", "updatedAt"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Customer or guest order with immutable purchase-time line item snapshots.",
+      "type": "object",
+      "properties": {
+        "orderId": { "type": "string", "minLength": 6, "maxLength": 40, "pattern": "^[A-Z0-9\\-]+$" },
+        "userId": { "type": "string", "maxLength": 128 },
+        "idempotencyKey": { "type": "string", "minLength": 8, "maxLength": 100 },
+        "customerDetails": { "type": "object" },
+        "deliveryAddress": { "type": "object" },
+        "items": { "type": "array" },
+        "subtotal": { "type": "number" },
+        "discount": { "type": "number" },
+        "deliveryCharge": { "type": "number" },
+        "total": { "type": "number" },
+        "paymentMethod": { "type": "string", "enum": ["Cash on Delivery", "Online Payment (Demo Mode)"] },
+        "paymentStatus": { "type": "string", "enum": ["Pending", "Paid (Demo)", "Refunded"] },
+        "orderStatus": { "type": "string", "enum": ["Pending", "Confirmed", "Processing", "Shipped", "Delivered", "Cancelled"] },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": [
+        "orderId",
+        "userId",
+        "idempotencyKey",
+        "customerDetails",
+        "deliveryAddress",
+        "items",
+        "subtotal",
+        "discount",
+        "deliveryCharge",
+        "total",
+        "paymentMethod",
+        "paymentStatus",
+        "orderStatus",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "Review": {
+      "title": "Review",
+      "description": "Customer product review linked to a catalog product.",
+      "type": "object",
+      "properties": {
+        "productId": { "type": "string", "maxLength": 128, "pattern": "^[a-zA-Z0-9_\\-]+$" },
+        "userId": { "type": "string", "maxLength": 128 },
+        "userName": { "type": "string", "minLength": 1, "maxLength": 80 },
+        "rating": { "type": "number" },
+        "reviewText": { "type": "string", "minLength": 3, "maxLength": 1000 },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["productId", "userId", "userName", "rating", "reviewText", "createdAt"]
+    },
+    "Admin": {
+      "title": "Admin",
+      "description": "Trusted administrator record granting store management permissions.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "maxLength": 128 },
+        "email": { "type": "string", "maxLength": 160 },
+        "role": { "type": "string", "enum": ["admin", "super_admin"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["uid", "role", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/categories/{categoryId}": {
+      "schema": { "$ref": "#/entities/Category" },
+      "description": "Active retail product categories."
+    },
+    "/products/{productId}": {
+      "schema": { "$ref": "#/entities/Product" },
+      "description": "Unified product catalog used across storefront and GiftMatch."
+    },
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Private customer profile documents keyed by Firebase Auth UID."
+    },
+    "/users/{userId}/addresses/{addressId}": {
+      "schema": { "$ref": "#/entities/UserAddress" },
+      "description": "Saved customer delivery addresses under their user profile."
+    },
+    "/carts/{userId}": {
+      "schema": { "$ref": "#/entities/Cart" },
+      "description": "Customer shopping cart keyed by Firebase Auth UID."
+    },
+    "/wishlists/{userId}": {
+      "schema": { "$ref": "#/entities/Wishlist" },
+      "description": "Customer saved wishlist keyed by Firebase Auth UID."
+    },
+    "/orders/{orderId}": {
+      "schema": { "$ref": "#/entities/Order" },
+      "description": "Customer and guest orders with purchase-time snapshots."
+    },
+    "/reviews/{reviewId}": {
+      "schema": { "$ref": "#/entities/Review" },
+      "description": "Verified customer reviews for products."
+    },
+    "/admins/{adminUid}": {
+      "schema": { "$ref": "#/entities/Admin" },
+      "description": "Protected administrator role assignments."
+    }
+  }
+}
